@@ -1,0 +1,84 @@
+<html>
+
+    <head>
+    
+        <title>Javascript</title>
+        
+        <style>
+        
+            h1 {
+                
+                margin-bottom:25px;
+            
+            }
+            
+            p {
+                font-size:25px;
+                font-weight:bolder;
+                padding-left:30px;
+            }
+            
+            #buttonGuess {
+                margin-top:30px;
+            }
+            
+        </style>
+    
+    </head>
+
+    
+    <body>
+
+        <div>
+        <h1>My number:</h1>
+        <input style="text" id="myNumber">
+        </div>
+        
+        <div>
+        <h1>Computer guess:</h1>
+        <input style="text" id="compGuess">
+        </div>
+        
+        <div>
+        <h1>Amount of guesses:</h1>
+        <input style="text" id="compGuessAmt">
+        </div>
+        
+        <div>
+        <button id="buttonGuess">Computer Guess!</button>
+        </div>
+        
+        <script type="text/javascript">
+           
+            var myNumber = (Math.floor(Math.random() * 6));
+            var i = 1;
+            document.getElementById("myNumber").value = myNumber;
+        
+            document.getElementById("buttonGuess").onclick = function() {
+            
+            
+                var compGuess = (Math.floor(Math.random() * 6));
+                document.getElementById("compGuess").value = compGuess;
+                    
+            
+        
+                if (compGuess == myNumber) {
+                    document.getElementById("compGuessAmt").value = i++;
+                    document.getElementById("compGuess").style.color = "green";
+                    document.getElementById("compGuess").style.backgroundColor = "lightgreen";
+                    alert('The computer guessed it!');
+                } else if (compGuess != myNumber) {
+                    document.getElementById("compGuessAmt").value = i++;
+                    document.getElementById("compGuess").style.color = "red";
+                    alert('Try Again!');
+                    
+                }
+       
+            }
+                      
+        </script>    
+        
+    </body>
+
+
+</html>
